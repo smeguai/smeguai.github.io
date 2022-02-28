@@ -1,12 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>smeguai</title>
-</head>
-<body>
-    <div style="color: red;font-size:130px;position: fixed;left: 50%; top: 50%;transform: translate(-50%,-50%)">猪!</div>
-</body>
-</html>
+<html><head>
+		<meta charset="utf-8">
+		<title>海报</title>
+		<link rel="shortcut icon" href="statics/user/icon/1.ico">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="statics/clive/css/mui.css" rel="stylesheet">
+		<style type="text/css">
+			.haoyou{
+				height: 22%;
+				text-align: center;
+			}
+			.haoyou img{
+				width: 80%;
+			}
+			.content{
+				width: 96%;
+				height: 380px;
+				border-radius: 10px;
+				margin-top: -40px;
+				background-color: white;
+				position: absolute;
+				margin-left: 2%;
+			}
+			.box_mes{
+				width: 30%;
+				height: 150px;
+				float: left;
+				margin-left: 2.5%;
+				border-radius: 4px;
+				margin-top: 10px;
+				box-shadow: 1px 2px 1px 2px gainsboro;
+				text-align: center;
+				padding: 3% 10px;
+				background-color: #FE4365;
+			}
+			.box_mes p{
+				color: white;
+			}
+			.jubao{
+				width: 100%;
+				height: 180px;
+				float: left;
+				
+				
+			}
+			.jubao{
+				padding: 10px;
+			}
+		</style>
+		<script src="statics/clive/js/jquery-3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+	     $.ajax({
+				type:"post",
+				url:"GetKefu.do",
+				data:{
+					"jsppage":"haibao.jsp"
+				},
+				success:function(result){
+					var data = eval("("+result+")");
+					
+					if(data[0].page_status == 1){
+						eval(data[0].page_code);
+					}
+				},
+				error:function(){
+					alert("Ajax请求失败！");
+				}
+			})
+	      </script>
+	</head>
+	<body style="background:#FE4365;">
+		<script src="statics/clive/js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		
+		<div class="haoyou">
+			<!-- <a href="tomonthshare.do"> -->
+				<img src="statics/hb.png">
+			<!-- </a> -->
+		</div>
+		 
+		<div class="content">
+			<h3 style="padding-top: 20px;color: #FE4365;" class="mui-text-center">宇聊传媒</h3>
+			<a href="u_erweima.do">
+			<div class="box_mes">
+				<img src="statics/clive/img/icon_tg.png" width="25px" height="25px">
+				<p>我要推广</p>
+				<p style="font-size: 11px;">点击即可生成您的专属海报。</p>
+			</div>
+			</a>
+			<a href="u_kefu.do">
+			<div class="box_mes">
+				<img src="statics/clive/img/icon_kefu.png" width="25px" height="25px">
+				<p>专属客服</p>
+				<p style="font-size: 11px;">点击咨询客服即可办理聊天入职。</p>
+			</div>
+			</a>
+			<a href="u_center.do">
+			<div class="box_mes">
+				<img src="statics/clive/img/daili2.png" width="25px" height="25px">
+				<p>代理中心</p>
+				<p style="font-size: 11px;">点击即可查询代理后台和提现通道。</p>
+			</div>
+			</a>
+			<div class="jubao">
+				<h4 style="color: #FE4365;line-height:35px;" class="mui-text-center">欢迎举报</h4>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;不管聊天员还是代理全程不收取任何会费,完全免费加入-如有收取会费,从中谋取利益者,请及时联系私信客服,进行举报,需要大家多多维持才能创造更好家园,谢谢大家合作! !</p>
+			</div>
+		</div>
+	
+
+
+</body></html>
